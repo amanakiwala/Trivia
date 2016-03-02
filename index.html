@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia Game</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+  <div class="jumbotron" id ="heading">
+       <h1 style ="color:#F224E1 ;font-family:verdana">Terrific Trivia</h1>
+  </div> 
+  <div class="startButton">
+
+    <h1 id = "click">Start</h1>
+
+  </div>
+  <div >
+     <h1 id = "time">Time remaining : </h1>
+  </div> 
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i"class="panel-title">1 . In what month is the earth closest to the sun?</h2>
+      </div>
+
+      <div class="panel-body">
+          <form id="form1">
+            <input type="radio" name="q1" value="March" checked> March
+            <input type="radio" name="q1" value="June"> June
+            <input type="radio" name="q1" value="January"> January 
+            <input type="radio" name="q1" value="November"> November 
+          </form> 
+      </div>
+  </div> 
+  <br />
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">2 . What is the most abundant element in earth's atmosphere?</h2>
+      </div>   
+      <div class="panel-body">
+          <form id="form2">
+            <input type="radio" name="q2" value="Hydrogen" checked> Hydrogen
+            <input type="radio" name="q2" value="Nitrogen"> Nitrogen
+            <input type="radio" name="q2" value="Oxygen"> Oxygen  
+            <input type="radio" name="q2" value="Carbon dioxide"> Carbon dioxide 
+          </form> 
+      </div>
+  </div> 
+  <br />
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">3 . By area, what is the smallest ocean in the world?</h2>
+      </div>  
+      <div class="panel-body">
+          <form id="form3">
+            <input type="radio" name="q3" value="Arctic Ocean" checked> Arctic Ocean 
+            <input type="radio" name="q3" value="Indian Ocean"> Indian Ocean
+            <input type="radio" name="q3" value="Altantic Ocean"> Atlantic Ocean 
+            <input type="radio" name="q3" value="Pacific ocean"> Pacific Ocean  
+          </form> 
+      </div>
+  </div> 
+  <br/>  
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">4 . What is the world's smallest continent?</h2>
+      </div> 
+      <div class="panel-body">
+          <form id="form4">
+            <input type="radio" name="q4" value="Asia" checked> Asia
+            <input type="radio" name="q4" value="Africa"> Africa
+            <input type="radio" name="q4" value="Australia"> Australia 
+            <input type="radio" name="q4" value="Europe"> Europe 
+          </form> 
+      </div>
+  </div>
+  <br />
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">5 . What is the name given to outermost layer of earth?</h2>
+      </div>    
+      <div class="panel-body">
+          <form id="form5">
+            <input type="radio" name="q5" value="Rocks" checked> Rocks
+            <input type="radio" name="q5" value="Crust"> Crust
+            <input type="radio" name="q5" value="Core"> Core  
+            <input type="radio" name="q5" value="Land"> Land  
+          </form> 
+      </div>
+  </div>
+  <br />
+
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">6 . Which gas forms approximately 1% of atmosphere?</h2>
+      </div>    
+      <div class="panel-body">
+          <form id="form6">
+            <input type="radio" name="q6" value="Hydrogen" checked> Hydrogen
+            <input type="radio" name="q6" value="Carbon monoxide"> Carbon monoxide
+            <input type="radio" name="q6" value="Argon"> Argon  
+            <input type="radio" name="q6" value="Methyl"> Methyl 
+          </form> 
+      </div>
+  </div>
+  <br />
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">7 . What is the earth's core made of?</h2>
+      </div>    
+      <div class="panel-body">
+          <form id="form7">
+            <input type="radio" name="q7" value="Dirt" checked> Dirt
+            <input type="radio" name="q7" value="Rocks"> Rocks
+            <input type="radio" name="q7" value="Gases"> Gases 
+            <input type="radio" name="q7" value="Molten iron and nickel"> Molten iron and nickel
+          </form> 
+      </div>
+  </div>
+  <br />
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">8 . Where is the Glacier bay national park?</h2>
+      </div>    
+      <div class="panel-body">
+          <form id="form8">
+            <input type="radio" name="q8" value="Alaska" checked> Alaska
+            <input type="radio" name="q8" value="Norway"> Norway
+            <input type="radio" name="q8" value="Iceland"> Iceland 
+            <input type="radio" name="q8" value="Canada"> Canada 
+          </form> 
+      </div>
+  </div>
+  <br />
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">9 . What is the only sea on earth without coastline?</h2>
+      </div>    
+      <div class="panel-body">
+          <form id="form9">
+            <input type="radio" name="q9" value="Sargasso Sea" checked> Sargasso Sea
+            <input type="radio" name="q9" value="Red Sea"> Red Sea
+            <input type="radio" name="q9" value="Arabian Sea"> Arabian sea  
+            <input type="radio" name="q9" value="Caspian Sea"> Caspian Sea  
+          </form> 
+      </div>
+  </div>
+  <br />
+  <div  class = "question" class="panel panel-default">
+      <div class="panel-heading">
+          <h2 class ="i" class="panel-title">10 . What is the world's largest ocean?</h2>
+      </div>    
+      <div class="panel-body">
+          <form id="form10">
+            <input type="radio" name="q10" value="Pacific Ocean" checked> Pacific Ocean
+            <input type="radio" name="q10" value="Atlantic Ocean"> Atlantic Ocean
+            <input type="radio" name="q10" value="Indian Ocean"> Indian Ocean 
+            <input type="radio" name="q10" value="Arctic Ocean"> Arctic Ocean  
+          </form> 
+      </div>
+  </div>
+  <div class ="result">
+       <h1>Time's Up!!!</h1>
+      Correct Answer:<div id = "correct"></div>
+      Wrong Answer:<div id = "wrong"></div>
+      Not Answered:<div id = "notAnswered"></div>
+  	
+  </div>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>

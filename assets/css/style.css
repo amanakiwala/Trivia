@@ -1,0 +1,43 @@
+body{
+	background-image: url("../images/background-1152459_960_720.jpg");
+}
+
+#heading {
+	background-color: #65DAE0;
+	width:960px;
+	margin: auto;
+}
+h1{
+	text-align: center;
+}
+.i{
+	font-weight: bold;
+	color: green;
+
+}
+.startButton{
+	height:100px;
+	width:300px;
+	background-color: orange;
+	margin:auto;
+	margin-bottom: 20px;
+}
+#click{
+	color:#F224E1;
+	padding-top: 30px;
+}
+.question{
+	background-color: #F7F3B2;
+	width :960px;
+	margin:auto;
+}
+form{
+	color: red;
+	font-size: 20px;
+	
+}
+.result{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
