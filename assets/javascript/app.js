@@ -1,193 +1,162 @@
-//array of correct answers
-//var correctAnswer =["January","Nitrogen","Arctic Ocean","Australia","Crust","Argon","Molten iron and nickel","Alaska","Sargasso Sea","Pacific Ocean"];
-
-var answers = {
-	question1: 
-		{
-			yourAnswer: "",
-			correctAnswer: "January"
-		},
-	question2:
-		{
-			yourAnswer: "",
-			correctAnswer: "Nitrogen"
-		},
-    question3:
-        {
-        	yourAnswer: "",
-        	correctAnswer:"Arctic Ocean"
-        },
-    question4:
-        {
-        	yourAnswer: "",
-        	correctAnswer:"Australia"
-        },		
-    question5:
-        {
-        	yourAnswer: "",
-        	correctAnswer:"Crust"
-        },		
-    question6:
-        {
-        	yourAnswer: "",
-        	correctAnswer:"Argon"
-        },		
-    question7:
-        {
-        	yourAnswer: "",
-        	correctAnswer:"Moltan iron and nickel"
-        },		
-    question8:
-        {
-        	yourAnswer: "",
-        	correctAnswer:"Alaska"
-        },		
-    question9:
-        {
-        	yourAnswer: "",
-        	correctAnswer:"Sargasso Sea"
-        },		
-    question10:
-        {
-        	yourAnswer: "",
-        	correctAnswer:"Pacific Ocean"
-        },		                            		
-}
+var panel = $('#quiz-area');
 
 
+///////////////////////////////////////////////////////////////////////////////
 
-// create a function to check
-// does answers.question1.yourAnswer == answers.question1.correctAnswer
-var check =function(){
-if(answers.question1.yourAnswer == answers.question1.correctAnswer) {
-	correct++;
-    console.log("yay")
-}
+//CLICK EVENTS
 
-else {
-	wrong++;
-}
+///////////////////////////////////////////////////////////////////////////////
 
-if(answers.question2.yourAnswer == answers.question2.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-if(answers.question3.yourAnswer == answers.question3.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-if(answers.question4.yourAnswer == answers.question4.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-if(answers.question5.yourAnswer == answers.question5.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-if(answers.question6.yourAnswer == answers.question6.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-if(answers.question7.yourAnswer == answers.question7.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-if(answers.question8.yourAnswer == answers.question8.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-if(answers.question9.yourAnswer == answers.question9.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-if(answers.question10.yourAnswer == answers.question10.correctAnswer) {
-    correct++;
-}
-else{
-    wrong++;
-}
-}
-//getting text value for each clicked radiobutton
-$('#form1 input').on('change', function() {
-   alert($('input[name=q1]:checked', '#form1').val()); 
-});
-$('#form2 input').on('change', function() {
-   alert($('input[name=q2]:checked', '#form2').val()); 
-});
-$('#form3 input').on('change', function() {
-   alert($('input[name=q3]:checked', '#form3').val()); 
-});
-$('#form4 input').on('change', function() {
-   alert($('input[name=q4]:checked', '#form4').val()); 
-});
-$('#form5 input').on('change', function() {
-   alert($('input[name=q5]:checked', '#form5').val()); 
-});
-$('#form6 input').on('change', function() {
-   alert($('input[name=q6]:checked', '#form6').val()); 
-});
-$('#form7 input').on('change', function() {
-   alert($('input[name=q7]:checked', '#form7').val()); 
-});
-$('#form8 input').on('change', function() {
-   alert($('input[name=q8]:checked', '#form8').val()); 
-});
-$('#form9 input').on('change', function() {
-   alert($('input[name=q9]:checked', '#form9').val()); 
-});
-$('#form10 input').on('change', function() {
-   alert($('input[name=q10]:checked', '#form10').val()); 
+
+$(document).on('click', '#start', function(e) {
+  game.start();
 });
 
-//game counters
-var correct = 0;
-var wrong = 0;
-var notAnswered = 0;
+$(document).on('click', '#done', function(e) {
+  game.done();
+});
+///////////////////////////////////////////////////////////////////////////////
 
 
-//function for timer
+//Question set
 
-var seconds = 30;
-$('.startButton').click(run);
-function run(){
-	counter = setInterval(increment,1000);
 
-}
-function increment(){
-	seconds --
-	document.getElementById('time').innerHTML =('<h1>' + "Time remaining : " + seconds + '</h1>')
-	if (seconds === 0){
-		stop();
-		//alert('times up');
-		reset(); // Keep finishing reset. 
-	}
-}
-function stop(){
-	clearInterval(counter);
-}
-function reset(){
-	seconds = 30 ;
-	correct = 0 ;
-	wrong = 0 ;
-	notAnswered = 0 ;
+///////////////////////////////////////////////////////////////////////////////
 
-}
-$('#correct').append(correct);
-$('#wrong').append(wrong);
-$('#notAnswered').append(notAnswered);
+var questions = [{
+  question: "1 . In what month is the earth closest to the sun?",
+  answers: ["January", "February", "March", "April"],
+  correctAnswer: "January"
+}, {
+  question: "2 . What is the most abundant element in earth's atmosphere?",
+  answers: ["Hydrogen", "Nitrogen", "Oxygen", "Carbon Dioxide"],
+  correctAnswer: "Nitrogen"
+}, {
+  question: "3 . By area, what is the smallest ocean in the world?",
+  answers: ["Arctic Ocean", "Indian Ocean", "Atlantic Ocean", "Pacific Ocean"],
+  correctAnswer: "Arctic Ocean"
+}, {
+  question: "4 . What is the world's smallest continent?",
+  answers: ["Asia", "Africa", "Australia", "Europe"],
+  correctAnswer: "Australia"
+}, {
+  question: "5 . What is the name given to outermost layer of earth?",
+  answers: ["Rocks", "Crust", "Core", "Land"],
+  correctAnswer: "Crust"
+}, {
+  question:  "6 . Which gas forms approximately 1% of atmosphere?",
+  answers: ["Hydrogen", "Carbon monoxide", "Argon", "Methyl"],
+  correctAnswer: "Argon"
+}, {
+  question: "7 . What is the earth's core made of?",
+  answers: ["Dirt", "Rocks", "Gases", "Molten Iron and nickel"],
+  correctAnswer: "Molten iron and nickel"
+}, {
+  question: "8 . Where is the Glacier bay national park?",
+  answers: ["Alaska", "Norway", "Iceland", "Canada"],
+  correctAnswer: "Alaska"
+}];
+
+var game = {
+  correct:0,
+  incorrect:0,
+  counter:45,
+  countdown: function(){
+    game.counter--;
+    $('#counter-number').html(game.counter);
+
+    if (game.counter === 0){
+      console.log('TIME UP');
+      game.done();
+    }
+  },
+  start: function() {
+    timer = setInterval(game.countdown, 1000);
+
+    $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter-number">45</span> Seconds</h2>');
+    $('#start').remove();
+
+
+    for (var i = 0; i < questions.length; i++) {
+      panel.append('<h2>' + questions[i].question + '</h2>');
+      for (var j = 0; j < questions[i].answers.length; j++) {
+        panel.append('<input type="radio" name="question' + '-' + i + '" value="' + questions[i].answers[j] + '">' + questions[i].answers[j]);
+      }
+    }
+
+    panel.append('<button id="done">Done</button>');
+  },
+  done: function() {
+
+
+    $.each($("input[name='question-0']:checked"), function() {
+      if ($(this).val() == questions[0].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+    $.each($("input[name='question-1']:checked"), function() {
+        if ($(this).val() == questions[1].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+    $.each($("input[name='question-2']:checked"), function() {
+      if ($(this).val() == questions[2].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+    $.each($("input[name='question-3']:checked"), function() {
+      if ($(this).val() == questions[3].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+    $.each($("input[name='question-4']:checked"), function() {
+      if ($(this).val() == questions[4].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+    $.each($("input[name='question-5']:checked"), function() {
+      if ($(this).val() == questions[5].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+    $.each($("input[name='question-6']:checked"), function() {
+      if ($(this).val() == questions[6].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+    $.each($("input[name='question-7']:checked"), function() {
+      if ($(this).val() == questions[7].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+
+    this.result();
+  },
+    result: function() {
+
+    clearInterval(timer);
+
+    $('#subwrapper h2').remove();
+    panel.html('<h2>All Done!</h2>');
+    panel.append('<h3>Correct Answers: ' + this.correct + '</h3>');
+    panel.append('<h3>Incorrect Answers: ' + this.incorrect + '</h3>');
+    panel.append('<h3>Unanswered: ' + (questions.length - (this.incorrect + this.correct)) + '</h3>');
+  }
+
+};
